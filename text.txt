@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class RoadAccidentReportArrays {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Single-dimensional array for cities
+        String[] cities = {"Cape Town", "Johannesburg", "Port Elizabeth"};
+        
+        // Two-dimensional array to store accidents: [city_index][0=car, 1=motorbike]
+        int[][] accidents = new int[3][2];
+        
+        // Input loop
+        for (int i = 0; i < cities.length; i++) {
+            System.out.print("Enter car accidents for " + cities[i] + ": ");
+            accidents[i][0] = scanner.nextInt();
+            
+            System.out.print("Enter motorbike accidents for " + cities[i] + ": ");
+            accidents[i][1] = scanner.nextInt();
+        }
+        
+        // Display Report
+        System.out.println("\nRoad Accident Report");
+        System.out.println("------------------------------------------------------------");
+        System.out.printf("%-15s %-15s %-15s %-15s%n", "City", "Car Accidents", "Motorbike Accidents", "Total Accidents");
+        System.out.println("------------------------------------------------------------");
+        
+        int totalCars = 0;
+        int totalBikes = 0;
+        int highestAccidents = 0;
+        String highestCity = "";
+        
+        for (int i = 0; i < cities.length; i++) {
+            int carAcc = accidents[i][0];
+            int bikeAcc = accidents[i][1];
+            int cityTotal = carAcc + bikeAcc;
+            
+            totalCars += carAcc;
+            totalBikes += bikeAcc;
+            
+            // Check for highest accidents
+            if (cityTotal > highestAccidents) {
+                highestAccidents = cityTotal;
+                highestCity = cities[i];
+            }
+            
+            System.out.printf("%-15s %-15d %-15d %-15d%n", cities[i], carAcc, bikeAcc, cityTotal);
+        }
+        
+        System.out.println("------------------------------------------------------------");
+        System.out.printf("%-15s %-15d %-15d %-15d%n", "Total", totalCars, totalBikes, (totalCars + totalBikes));
+        
+        // Highest Number of Road Accidents Section
+        System.out.println("\nHighest Number of Road Accidents");
+        System.out.println("City with the highest number of road accidents: " + highestCity);
+        System.out.println("Total accidents in " + highestCity + ": " + highestAccidents);
+        
+        scanner.close();
+    }
+}

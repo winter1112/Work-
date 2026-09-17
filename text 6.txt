@@ -1,0 +1,12 @@
+Vehicle Accident Report
+-----------------------
+Enter vehicle type: Car
+Enter city: Johannesburg
+Enter total number of accidents: 178
+
+Vehicle Accident Report
+VEHICLE ACCIDENT REPORT
+-----------------------
+Vehicle Type        : Car
+City                : Johannesburg
+Total Accidents     : 178

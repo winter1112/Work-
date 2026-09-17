@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class RunApplication {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Vehicle Accident Report");
+        System.out.println("-----------------------");
+
+        System.out.print("Enter vehicle type: ");
+        String vehicleType = scanner.nextLine();
+
+        System.out.print("Enter city: ");
+        String city = scanner.nextLine();
+
+        System.out.print("Enter total number of accidents: ");
+        int totalAccidents = scanner.nextInt();
+
+        // Instantiate the RoadAccidentReport class
+        RoadAccidentReport report = new RoadAccidentReport(vehicleType, city, totalAccidents);
+
+        System.out.println("\nVehicle Accident Report");
+        // Execute the print method
+        report.printAccidentReport();
+
+        scanner.close();
+    }
+}

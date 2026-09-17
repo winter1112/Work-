@@ -1,0 +1,14 @@
+public class RoadAccidentReport extends RoadAccidents {
+
+    public RoadAccidentReport(String vehicleType, String city, int totalAccidents) {
+        super(vehicleType, city, totalAccidents);
+    }
+
+    public void printAccidentReport() {
+        System.out.println("VEHICLE ACCIDENT REPORT");
+        System.out.println("-----------------------");
+        System.out.printf("%-20s: %s%n", "Vehicle Type", getAccidentVehicleType());
+        System.out.printf("%-20s: %s%n", "City", getCity());
+        System.out.printf("%-20s: %d%n", "Total Accidents", getAccidentTotal());
+    }
+}
